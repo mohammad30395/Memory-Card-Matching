@@ -14,10 +14,8 @@ type MemoryBoardProps = {
 export default function MemoryBoard({ cards, difficulty, playground, disabled, onFlip }: MemoryBoardProps) {
   return (
     <div
-      className="mx-auto grid h-full min-h-0 max-h-full max-w-full justify-center gap-1.5 sm:gap-2"
+      className="mx-auto grid size-full min-h-0 max-w-[820px] gap-1.5 sm:gap-2"
       style={{
-        aspectRatio: `${difficulty.columns * 3} / ${difficulty.rows * 4}`,
-        maxWidth: "820px",
         gridTemplateColumns: `repeat(${difficulty.columns}, minmax(0, 1fr))`,
         gridTemplateRows: `repeat(${difficulty.rows}, minmax(0, 1fr))`,
       }}

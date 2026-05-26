@@ -11,7 +11,12 @@ type ScoreBoardProps = {
 
 export default function ScoreBoard({ participants, currentTurnIndex }: ScoreBoardProps) {
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+    <div
+      className="grid gap-1.5 sm:gap-2"
+      style={{
+        gridTemplateColumns: `repeat(${Math.max(participants.length, 1)}, minmax(0, 1fr))`,
+      }}
+    >
       {participants.map((participant, index) => {
         const active = index === currentTurnIndex;
         const Icon = participant.isComputer ? Bot : UserRound;
@@ -20,7 +25,7 @@ export default function ScoreBoard({ participants, currentTurnIndex }: ScoreBoar
           <div
             key={participant.id}
             className={clsx(
-              "min-w-0 rounded-lg border px-2.5 py-2 transition",
+              "min-w-0 rounded-lg border px-2 py-1.5 transition sm:px-2.5 sm:py-2",
               active ? "border-cyan-300 bg-cyan-300/18" : "border-white/12 bg-black/18",
             )}
           >
@@ -28,7 +33,9 @@ export default function ScoreBoard({ participants, currentTurnIndex }: ScoreBoar
               <Icon className={clsx("size-3.5 shrink-0", active ? "text-cyan-200" : "text-slate-400")} />
               <p className="truncate text-[0.72rem] font-bold text-white">{participant.name}</p>
             </div>
-            <p className="mt-1 text-lg font-black leading-none text-white">{participant.score}</p>
+            <p className="mt-0.5 text-base font-black leading-none text-white sm:mt-1 sm:text-lg">
+              {participant.score}
+            </p>
           </div>
         );
       })}

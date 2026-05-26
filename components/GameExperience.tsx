@@ -303,29 +303,29 @@ export default function GameExperience() {
     Boolean(currentParticipant?.isComputer);
 
   return (
-    <main className={clsx("grid h-dvh overflow-hidden", config.playground.gameClassName)}>
-      <div className="flex h-dvh min-h-0 flex-col gap-2 px-2 py-2 safe-bottom sm:px-4 sm:py-3">
-        <header className="grid shrink-0 gap-2">
-          <div className="flex items-center justify-between gap-2">
+    <main className={clsx("grid h-dvh w-full overflow-hidden", config.playground.gameClassName)}>
+      <div className="flex h-dvh min-h-0 w-full max-w-full flex-col gap-1.5 overflow-hidden px-1.5 py-1.5 safe-bottom sm:gap-2 sm:px-4 sm:py-3">
+        <header className="grid shrink-0 gap-1.5 sm:gap-2">
+          <div className="flex items-center justify-between gap-1.5 sm:gap-2">
             <Link
               href={ROUTES.home}
-              className="grid size-10 shrink-0 place-items-center rounded-lg border border-white/12 bg-black/20 transition hover:bg-white/10"
+              className="grid size-9 shrink-0 place-items-center rounded-lg border border-white/12 bg-black/20 transition hover:bg-white/10 sm:size-10"
               title="Home"
             >
               <Home className="size-4" />
             </Link>
             <div className="min-w-0 text-center">
-              <p className={clsx("truncate text-sm font-black sm:text-base", config.playground.accentClassName)}>
+              <p className={clsx("truncate text-xs font-black sm:text-base", config.playground.accentClassName)}>
                 {config.playground.title} · {config.difficulty.title}
               </p>
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/60">
+              <p className="text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white/60 sm:text-[0.68rem] sm:tracking-[0.18em]">
                 {config.mode.type} mode
               </p>
             </div>
             <button
               type="button"
               onClick={startNewGame}
-              className="grid size-10 shrink-0 place-items-center rounded-lg border border-white/12 bg-black/20 transition hover:bg-white/10"
+              className="grid size-9 shrink-0 place-items-center rounded-lg border border-white/12 bg-black/20 transition hover:bg-white/10 sm:size-10"
               title="Restart"
             >
               <RotateCcw className="size-4" />
@@ -342,7 +342,7 @@ export default function GameExperience() {
           </div>
         </header>
 
-        <section className="relative min-h-0 flex-1 rounded-xl border border-white/10 bg-black/18 p-2 shadow-2xl shadow-black/25 sm:p-3">
+        <section className="relative min-h-0 flex-1 overflow-hidden rounded-xl border border-white/10 bg-black/18 p-1.5 shadow-2xl shadow-black/25 sm:p-3">
           <MemoryBoard
             cards={cards}
             difficulty={config.difficulty}
