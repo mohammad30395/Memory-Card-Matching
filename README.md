@@ -150,4 +150,4 @@ Because records are local to the current browser, clearing browser storage will 
 
 ## License
 
-No license has been added yet. Add one before distributing or reusing this project publicly.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
