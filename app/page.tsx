@@ -7,7 +7,7 @@ import Button from "@/components/Button";
 import Navbar from "@/components/Navbar";
 import { ROUTES } from "@/lib/constants";
 
-const ThreeHandGesture = dynamic(() => import("@/components/ThreeHandGesture"), {
+const ThreeMemoryCards = dynamic(() => import("@/components/ThreeMemoryCards"), {
   ssr: false,
   loading: () => <div className="h-[280px] w-full rounded-2xl bg-white/6 sm:h-[360px]" />,
 });
@@ -49,7 +49,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative">
-          <ThreeHandGesture />
+          <ThreeMemoryCards />
         </div>
       </section>
     </main>
